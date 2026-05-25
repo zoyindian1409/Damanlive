@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Damangamelive</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:
+    radial-gradient(circle at top left,#312e81,#0f172a,#020617);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ===== NAVBAR ===== */
+
+header{
+    width:100%;
+    position:fixed;
+    top:0;
+    z-index:999;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background:rgba(0,0,0,0.35);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+    font-size:34px;
+    font-weight:700;
+    color:#00e5ff;
+    text-shadow:0 0 15px #00e5ff;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:28px;
+    font-size:16px;
+    transition:0.3s;
+    position:relative;
+}
+
+nav a:hover{
+    color:#00e5ff;
+}
+
+nav a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:#00e5ff;
+    transition:0.4s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* ===== HERO SECTION ===== */
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.8)),
+    url('https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=1600&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero-content{
+    max-width:900px;
+    animation:fadeUp 1.2s ease;
+}
+
+.hero h1{
+    font-size:72px;
+    line-height:1.2;
+    margin-bottom:25px;
+    text-shadow:0 0 25px rgba(0,229,255,0.5);
+}
+
+.hero p{
+    font-size:21px;
+    color:#d1d5db;
+    line-height:1.8;
+}
+
+.hero-buttons{
+    margin-top:35px;
+}
+
+.btn{
+    padding:16px 38px;
+    border:none;
+    border-radius:14px;
+    font-size:18px;
+    margin:10px;
+    cursor:pointer;
+    transition:0.4s;
+    font-weight:600;
+}
+
+.play-btn{
+    background:#00e5ff;
+    color:black;
+    box-shadow:0 0 20px rgba(0,229,255,0.5);
+}
+
+.play-btn:hover{
+    transform:translateY(-6px) scale(1.05);
+}
+
+.explore-btn{
+    background:#7c3aed;
+    color:white;
+    box-shadow:0 0 20px rgba(124,58,237,0.4);
+}
+
+.explore-btn:hover{
+    transform:translateY(-6px) scale(1.05);
+}
+
+/* ===== TRENDING ===== */
+
+.games{
+    padding:120px 60px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:52px;
+    margin-bottom:70px;
+}
+
+.game-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
+}
+
+.game-card{
+    background:rgba(255,255,255,0.05);
+    border-radius:24px;
+    overflow:hidden;
+    transition:0.5s;
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.game-card:hover{
+    transform:translateY(-12px) scale(1.02);
+    box-shadow:0 0 35px rgba(0,229,255,0.3);
+}
+
+.game-card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+}
+
+.game-info{
+    padding:24px;
+}
+
+.game-info h3{
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.game-info p{
+    color:#cbd5e1;
+    line-height:1.7;
+}
+
+/* ===== STATS ===== */
+
+.stats{
+    padding:100px 40px;
+    background:linear-gradient(90deg,#06b6d4,#7c3aed);
+    text-align:center;
+}
+
+.stats h1{
+    font-size:60px;
+    color:black;
+    margin-bottom:20px;
+}
+
+.stats p{
+    color:#111827;
+    font-size:22px;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+    background:#020617;
+    text-align:center;
+    padding:35px;
+    color:#94a3b8;
+    border-top:1px solid rgba(255,255,255,0.06);
+}
+
+/* ===== ANIMATION ===== */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:768px){
+
+    header{
+        padding:18px 25px;
+        flex-direction:column;
+    }
+
+    nav{
+        margin-top:15px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .section-title{
+        font-size:38px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+     🎮 Daman
+    </div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Daman Games</a>
+        <a href="#">Trending Game</a>
+        <a href="#">Esports</a>
+        <a href="#">Contact Us </a>
+    </nav>
+
+</header>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Welcome to Daman Games Online 
+        </h1>
+
+        <p>
+            ​Daman Games is a popular online Game platform in India, offering a variety of games such as ,Rummy, Poker, Slots, Jili, JDB,Limbo, Cricket,color prediction and more. You can play games to win real money and also earn through referral programs.you can use the invitationCode=325847131423
+        </p>
+<div class="hero-buttons">
+
+    <a href="https://damansuperstar1.com/#/register?invitationCode=325847131423"
+    class="btn play-btn">
+
+        🎮 Login Now
+
+    </a>
+
+    <a href="https://damansuperstar1.com/#/register?invitationCode=325847131423"
+    class="btn explore-btn">
+
+        🎮  Register Now
+
+    </a>
+</div>
+</section>
+<section class="games">
+    <h1 class="section-title">
+        🔥 Online Games
+    </h1>
+    <div class="game-grid">
+
+        <div class="game-card">
+
+            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1400&auto=format&fit=crop">
+
+            <div class="game-info">
+
+                <h3>Cyber Battle X</h3>
+
+                <p>
+                    Fight advanced AI enemies in futuristic cyberpunk battle arenas.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="game-card">
+
+            <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=1400&auto=format&fit=crop">
+
+            <div class="game-info">
+
+                <h3>Speed Nitro</h3>
+
+                <p>
+                    Realistic racing experience with online tournaments and drifting.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="game-card">
+
+            <img src="https://images.unsplash.com/photo-1547394765-185e1e68f34e?q=80&w=1400&auto=format&fit=crop">
+
+            <div class="game-info">
+
+                <h3>Zombie Survival</h3>
+
+                <p>
+                    Survive horror worlds and unlock legendary weapons and powers.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="stats">
+
+    <h1>
+        🎮 10M+ Active Players
+    </h1>
+    <p>
+       <section class="daman-content">
+<!-- ===== DAMAN CONTENT SECTION START ===== -->
+<style>
+.daman-content{
+    max-width:1100px;
+    margin:auto;
+    padding:70px 20px;
+    color:#fff;
+    font-family:'Poppins',sans-serif;
+}
+
+/* MAIN TITLE */
+
+.main-title{
+    font-size:52px;
+    text-align:center;
+    font-weight:800;
+    margin-bottom:25px;
+    color:#ffffff;
+    line-height:1.3;
+}
+
+/* DESCRIPTION */
+
+.main-description{
+    font-size:19px;
+    line-height:1.9;
+    text-align:center;
+    color:#dbeafe;
+    margin-bottom:45px;
+    font-weight:500;
+}
+
+/* BOX */
+
+.info-box{
+    background:linear-gradient(135deg,#1d4ed8,#2563eb);
+    border-radius:20px;
+    padding:32px;
+    margin-bottom:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.35);
+    border:1px solid rgba(255,255,255,0.08);
+    transition:0.3s;
+}
+
+.info-box:hover{
+    transform:translateY(-5px);
+}
+
+/* HEADINGS */
+
+.info-box h2{
+    font-size:34px;
+    font-weight:800;
+    margin-bottom:18px;
+    color:#fff;
+}
+
+.info-box h3{
+    font-size:25px;
+    margin-top:25px;
+    margin-bottom:15px;
+    font-weight:700;
+    color:#fff;
+}
+
+/* TEXT */
+
+.info-box p{
+    font-size:18px;
+    line-height:1.9;
+    color:#ffffff;
+    margin-bottom:18px;
+}
+/* LIST */
+.info-box ul,
+.info-box ol{
+    padding-left:24px;
+    margin-bottom:18px;
+}
+
+.info-box li{
+    font-size:17px;
+    line-height:1.9;
+    color:#fff;
+    margin-bottom:8px;
+    font-weight:500;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.main-title{
+    font-size:36px;
+}
+
+.main-description{
+    font-size:16px;
+}
+
+.info-box{
+    padding:24px;
+}
+
+.info-box h2{
+    font-size:26px;
+}
+
+.info-box h3{
+    font-size:21px;
+}
+
+.info-box p,
+.info-box li{
+    font-size:15px;
+}
+
+}
+
+</style>
+
+
+<section class="daman-content">
+
+<h1 class="main-title">
+🎮 Daman Games 24×7 Support
+</h1>
+
+<p class="main-description">
+Daman Games is a popular online gaming platform where users can enjoy casino games, lottery games, slot games, fishing games, crash games, and more directly from mobile devices.
+</p>
+
+
+<!-- BOX 1 -->
+
+<div class="info-box">
+
+<h2>🎯 What is Daman Games?</h2>
+
+<p>
+Daman Games is an online gaming platform designed for entertainment and smooth gameplay. Users can enjoy multiple categories of exciting games with fast deposits and withdrawals.
+</p>
+
+<ul>
+<li>🎨 Color Prediction Games</li>
+<li>🎰 Lottery Games</li>
+<li>🎲 Casino Games</li>
+<li>🃏 Rummy & Poker Games</li>
+<li>🐟 Fishing Games</li>
+<li>🚀 Original Crash Games</li>
+</ul>
+
+</div>
+
+
+<!-- BOX 2 -->
+
+<div class="info-box">
+
+<h2>🔐 How to Log In</h2>
+
+<ol>
+<li>Visit official website</li>
+<li>Click Login button</li>
+<li>Enter mobile number</li>
+<li>Enter password</li>
+<li>Click Login</li>
+</ol>
+
+</div>
+
+
+<!-- BOX 3 -->
+
+<div class="info-box">
+
+<h2>📝 Register Account</h2>
+
+<ol>
+<li>Open registration page</li>
+<li>Enter mobile number</li>
+<li>Create password</li>
+<li>Complete OTP verification</li>
+<li>Account created successfully</li>
+</ol>
+
+</div>
+
+
+<!-- BOX 4 -->
+
+<div class="info-box">
+
+<h2>📥 Download App</h2>
+
+<p>
+Users can download APK or add shortcut directly on home screen for quick access.
+</p>
+
+</div>
+
+
+<!-- BOX 5 -->
+
+<div class="info-box">
+
+<h2>💰 Deposit Money</h2>
+
+<ol>
+<li>Open Wallet</li>
+<li>Click Deposit</li>
+<li>Select payment method</li>
+<li>Complete payment</li>
+</ol>
+
+</div>
+
+
+<!-- BOX 6 -->
+
+<div class="info-box">
+
+<h2>🏦 Withdraw Money</h2>
+
+<ol>
+<li>Open Wallet</li>
+<li>Select Withdraw</li>
+<li>Enter amount</li>
+<li>Submit request</li>
+</ol>
+
+</div>
+
+
+<!-- BOX 7 -->
+
+<div class="info-box">
+
+<h2>🎮 Popular Games</h2>
+
+<ul>
+<li>Wingo</li>
+<li>TRX Wingo</li>
+<li>Roulette</li>
+<li>PG Slots</li>
+<li>Aviator</li>
+<li>Plinko</li>
+</ul>
+
+</div>
+
+</section>
+
+<!-- ===== DAMAN CONTENT SECTION END ===== -->
+ </section>
+<!-- FAQ SECTION START -->
+
+<section class="faq-section">
+
+<h2 class="faq-title">FAQ</h2>
+
+<div class="faq-item">
+<button class="faq-question">
+How much sign-up bonus I’ll get?
+<span>+</span>
+</button>
+<div class="faq-answer">
+<p>
+You’ll get ₹500 in your acc as sign-up bonus when you register on Daman game for first time.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Is Daman Games available for iOS?
+<span>+</span>
+</button>
+<div class="faq-answer">
+<p>
+No, Daman Game App only for Android devices. No official iOS app is out yet, just Android users can play. But you can use the web version on IOS to play your favourite games.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+What is the app size of Daman Games?
+<span>+</span>
+</button>
+<div class="faq-answer">
+<p>
+App is super light. It’s just 5.3 MB, so u can easily download it on almost any Android device.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+What’s the license of this app?
+<span>+</span>
+</button>
+<div class="faq-answer">
+<p>
+Daman Game is licensed under Curacao gaming, so it’s kinda trusted and runs legally under international gaming rules system.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Is customer support always available?
+<span>+</span>
+</button>
+<div class="faq-answer">
+<p>
+Yeah, customer support team is live 24x7, so u can get help anytime u face any issue or problem.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+What’s the minimum deposit amount?
+<span>+</span>
+</button>
+<div class="faq-answer">
+<p>
+To start playing, you gotta deposit at least ₹100 in ur game acc using any of the supported payment methods.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+What’s the maximum deposit allowed?
+<span>+</span>
+</button>
+<div class="faq-answer">
+<p>
+Max you can add is ₹30 lakh in ur acc. So high rollers can play big without any deposit issue.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+What are some key features?
+<span>+</span>
+</button>
+<div class="faq-answer">
+<p>
+Cool UI, many games, instant deposits, and 24x7 support make Daman app a solid option for mobile gaming lovers.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+What Android version I need?
+<span>+</span>
+</button>
+<div class="faq-answer">
+<p>
+You need Android 13 or higher to run Daman app smooth. Older versions might lag or not work properly.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Can I contact support on email?
+<span>+</span>
+</button>
+<div class="faq-answer">
+<p>
+Yeah, just mail us at info@damangames.onl anytime. Or chat directly inside the app for fast help from team.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Is it safe to use Daman app?
+<span>+</span>
+</button>
+<div class="faq-answer">
+<p>
+Yeah, personal info is safe. They use encryption and follow rules to protect user data from any kinda misuse.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Can i deposit money by USDT?
+<span>+</span>
+</button>
+<div class="faq-answer">
+<p>
+Yes, you can deposit money by USDT TRC20 and the minimum deposit is 10 USDT.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Why am I getting a login error on Daman Games?
+<span>+</span>
+</button>
+<div class="faq-answer">
+<p>
+You might have entered an incorrect mobile number or password. Carefully review both for any mistakes, and try typing your password manually instead of copying and pasting it.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Why is my Daman Games account locked?
+<span>+</span>
+</button>
+<div class="faq-answer">
+<p>
+Too many failed login attempts can temporarily lock your account. Wait a few minutes and try again or contact support.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+I’m facing login issues on the website. What can I do?
+<span>+</span>
+</button>
+<div class="faq-answer">
+<p>
+Clear your browser’s cache and cookies to remove any stored data that might be causing issues. If that doesn’t help, try accessing the site using a different browser or device for better results.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+How to change language in Daman Games?
+<span>+</span>
+</button>
+<div class="faq-answer">
+<p>
+Just go to the homepage of Daman Games and scroll down you’ll find an option to change the language. Select your preferred language from there easily.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+How can I add 2FA in Daman Games?
+<span>+</span>
+</button>
+<div class="faq-answer">
+<p>
+To add 2FA in Daman Games, log in to your account, go to My Account > Settings > Google Authentication, scan the QR code with the Google Authenticator app, and enter the verification code to enable 2FA.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Is there any guide for Daman Games? I am new to it.
+<span>+</span>
+</button>
+<div class="faq-answer">
+<p>
+Yes! Daman Games has a Beginner’s Guide to help new users. If you have an account, log in and scroll down on the homepage you’ll see the Beginner’s Guide option.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+What should I do if I didn’t receive the OTP?
+<span>+</span>
+</button>
+<div class="faq-answer">
+<p>
+Make sure your mobile network has a stable signal and is functioning correctly. If you're still not receiving the OTP, wait a few moments and then try requesting it again.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Which payment methods are supported?
+<span>+</span>
+</button>
+<div class="faq-answer">
+<p>
+You can use Paytm, GPay, Hippo Pay, Water Pay, Fast Pay, and many more to add or withdraw cash.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Why isn’t the Daman Games app opening or working properly?
+<span>+</span>
+</button>
+<div class="faq-answer">
+<p>
+Try restarting your phone to refresh the system. If the issue persists, uninstall and reinstall the app, and ensure you're using the latest available version from the play store.
+</p>
+</div>
+</div>
+
+</section>
+
+<style>
+
+.faq-section{
+max-width:900px;
+margin:auto;
+padding:50px 20px;
+}
+
+.faq-title{
+font-size:34px;
+text-align:center;
+margin-bottom:30px;
+color:#fff;
+font-weight:700;
+}
+
+.faq-item{
+background:#111827;
+border-radius:12px;
+margin-bottom:15px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,0.08);
+}
+
+.faq-question{
+width:100%;
+background:none;
+border:none;
+outline:none;
+padding:20px;
+color:#fff;
+font-size:17px;
+font-weight:600;
+cursor:pointer;
+display:flex;
+justify-content:space-between;
+align-items:center;
+text-align:left;
+}
+
+.faq-question span{
+font-size:26px;
+transition:0.3s;
+}
+
+.faq-answer{
+max-height:0;
+overflow:hidden;
+transition:max-height 0.4s ease;
+background:#1f2937;
+}
+
+.faq-answer p{
+padding:20px;
+margin:0;
+color:#d1d5db;
+line-height:1.8;
+font-size:15px;
+}
+
+.faq-item.active .faq-answer{
+max-height:400px;
+}
+
+.faq-item.active .faq-question span{
+transform:rotate(45deg);
+}
+
+</style>
+
+<script>
+
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
+
+const question = item.querySelector(".faq-question");
+
+question.addEventListener("click", () => {
+
+item.classList.toggle("active");
+
+});
+
+});
+
+</script>
+
+<!-- FAQ SECTION END -->
+
+</section>
+
+<footer>
+
+    © 2026 Daman Games Online Platform 
+
+</footer>
+
+</body>
+</html>
+```
