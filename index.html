@@ -203,13 +203,6 @@ nav a:hover::after{
 .games{
     padding:120px 60px;
 }
-
-.section-title{
-    text-align:center;
-    font-size:52px;
-    margin-bottom:70px;
-}
-
 .game-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
@@ -249,45 +242,6 @@ nav a:hover::after{
     color:#cbd5e1;
     line-height:1.7;
 }
-
-/* ===== FOOTER ===== */
-
-footer{
-    background:#020617;
-    text-align:center;
-    padding:35px;
-    color:#94a3b8;
-    border-top:1px solid rgba(255,255,255,0.06);
-}
-
-footer a{
-color:#94a3b8;
-text-decoration:none;
-margin:0 8px;
-}
-
-footer a:hover{
-color:#00e5ff;
-}
-
-/* ===== ANIMATION ===== */
-
-@keyframes fadeUp{
-
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
-}
-
-/* ===== MOBILE ===== */
-
 @media(max-width:768px){
 
 .logo{
@@ -327,8 +281,125 @@ nav a{
     font-size:38px;
 }
 
+.daman-info th,
+.daman-info td{
+    padding:12px;
+    font-size:14px;
 }
 
+.daman-info th{
+    width:40%;
+}
+}
+    
+/* ===== FOOTER ===== */
+
+footer{
+    background:#020617;
+    text-align:center;
+    padding:35px;
+    color:#94a3b8;
+    border-top:1px solid rgba(255,255,255,0.06);
+}
+
+footer a{
+color:#94a3b8;
+text-decoration:none;
+margin:0 8px;
+}
+
+footer a:hover{
+color:#00e5ff;
+}
+
+/* ===== ANIMATION ===== */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+    .section-title{
+    text-align:center;
+    font-size:32px;
+    margin:60px 0 30px;
+    color:#ffffff;
+}
+
+.daman-content{
+    padding:80px 20px;
+    max-width:1000px;
+    margin:auto;
+}
+/* Daman Info Table */
+.daman-info{
+    max-width:900px;
+    margin:0 auto 50px;
+    padding:0 15px;
+    overflow-x:auto;
+}
+
+.daman-info table{
+    width:100%;
+    border-collapse:collapse;
+    background:#111827;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 15px rgba(0,0,0,0.3);
+}
+
+.daman-info th,
+.daman-info td{
+    padding:15px 20px;
+    border:1px solid rgba(255,255,255,0.08);
+    text-align:left;
+}
+
+.daman-info th{
+    width:35%;
+    background:#1f2937;
+    color:#00e5ff;
+    font-weight:600;
+}
+
+.daman-info td{
+    color:#e5e7eb;
+}
+
+.daman-info a{
+    color:#00e5ff;
+    text-decoration:none;
+    font-weight:500;
+}
+
+.daman-info a:hover{
+    text-decoration:underline;
+}
+
+@media (max-width:768px){
+
+    .section-title{
+        font-size:26px;
+    }
+
+    .daman-info th,
+    .daman-info td{
+        padding:12px;
+        font-size:14px;
+    }
+
+    .daman-info th{
+        width:40%;
+    }
+}
 </style>
 
 </head>
@@ -357,7 +428,7 @@ nav a{
 
 <div class="hero-content">
 
-<h1></h1>
+<h1>Daman Game Login & Register</h1>
 
 <p>
 <a href="https://damansuperstar1.com/#/register?invitationCode=325847131423" style="color:#00e5ff;text-decoration:underline;font-weight:700;">
@@ -382,10 +453,7 @@ is an online gaming platform that offers a variety of entertainment games, inclu
 
 </section>
 
-<!-- GAMES -->
-
-<section class="games" id="games">
-<h2 class="section-title">Daman Game Information</h2>
+<h2 class="section-title">Daman Game </h2>
 
 <div class="daman-info">
     <table>
@@ -400,21 +468,24 @@ is an online gaming platform that offers a variety of entertainment games, inclu
         </tr>
 
         <tr>
-            <th>Games</th>
+            <th>Games Available</th>
             <td>500+</td>
         </tr>
 
         <tr>
-            <th>Website Link</th>
+            <th>Official Website</th>
             <td>
-                <a href="https://damangamelive.online">
+                <a href="https://damangamelive.online/" target="_blank" rel="noopener">
+                    damangamelive.online
                 </a>
             </td>
         </tr>
     </table>
 </div>
-    🔥 Daman Games Online Platform
-    </h2>
+    <section class="games" id="games">
+ <h2 class="section-title">
+🔥 Daman Games Online Platform
+</h2>
 
 <div class="game-grid">
 
@@ -479,7 +550,7 @@ is an online gaming platform that offers a variety of entertainment games, inclu
 
   </div>
 
-</div> <!-- game-grid close -->
+</div><!-- game-grid close -->
 </section>
 <!-- APK -->
 
